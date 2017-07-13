@@ -1,17 +1,4 @@
-Programmable Voice: Quickstart Application Server - Python
-===
-This repository contains the server-side web application required to run the [Twilio Programmable Voice iOS SDK Quickstart](https://www.twilio.com/docs/api/voice-sdk/ios/getting-started) and [Android SDK Quickstart](https://www.twilio.com/docs/api/voice-sdk/android/getting-started) mobile sample apps, written in Python.
-
-Looking for the Quickstart mobile app?
-
-Download the client-side Quickstart Applications in Swift and iOS here:
-
-- [Swift Quickstart Mobile App](https://github.com/twilio/voice-quickstart-swift)
-- [Objective-C Quickstart Mobile App](https://github.com/twilio/voice-quickstart-objc)
-
-Download the client-side Quickstart Application for Android here:
-
-- [Android Quickstart Mobile App](https://github.com/twilio/voice-quickstart-android)
+Deep Reason Voice Server - Python
 
 Prerequisites
 ---
