@@ -1,11 +1,12 @@
 {
   "name": "Twilio Mobile Quickstart",
   "description": "A Python server to distribute access tokens and route calls for deep reason”,
-  "repository": "https://github.com/twilio/voice-quickstart-server-python",
+  "repository": "https://github.com/SteadyMan1989/DeepReasonTwilioVoiceServer",
   "keywords": [
     "twilio",
     "voice",
-    "mobile"
+    "mobile”,
+    “deep reason”
   ],
   "env": {
     "ACCOUNT_SID": {
