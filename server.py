@@ -1,7 +1,6 @@
 import os
 from flask import Flask, request
 from twilio.jwt.access_token import AccessToken, VoiceGrant
-from twilio.rest import Client
 import twilio.twiml
 
 ACCOUNT_SID = 'ACad4dc3b3ee78bebe28ff14c9aab76924'
@@ -30,7 +29,6 @@ def token(myId):
 @app.route('/outgoing', methods=['GET', 'POST'])
 def outgoing():
   resp = twilio.twiml.Response()
-  resp.say("Welcome!")
   with resp.dial(callerId='test1') as r:
     r.client(request.values.get('target'))
   return str(resp)
