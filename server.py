@@ -30,7 +30,7 @@ def token():
   )
   chatGrant = IpMessagingGrant(
     service_sid=ipm_service_sid,
-    endpoint_id="DeepReason:{0}:{1}".format(device_id, identity)
+    endpoint_id="DeepReason:{0}:{1}".format(device_id, device_id)
   )
 
   token = AccessToken(account_sid, api_key, api_key_secret, identity)
