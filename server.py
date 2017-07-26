@@ -12,8 +12,8 @@ IPM_SERVICE_SID = 'IS814c74082fd0415a918badc16f341069'
 
 app = Flask(__name__)
 
-@app.route('/accessToken/<myId>')
-def token(myId):
+@app.route('/accessToken', methods=['GET', 'POST'])
+def token():
   account_sid = os.environ.get("ACCOUNT_SID", ACCOUNT_SID)
   api_key = os.environ.get("API_KEY", API_KEY)
   api_key_secret = os.environ.get("API_KEY_SECRET", API_KEY_SECRET)
@@ -21,7 +21,8 @@ def token(myId):
   push_credential_sid = os.environ.get("PUSH_CREDENTIAL_SID", PUSH_CREDENTIAL_SID)
   app_sid = os.environ.get("APP_SID", APP_SID)
 
-  device_id = request.values.get('device_id')
+  device_id = request.values.get('device')
+  identity = request.values.get('identity')
 
   voiceGrant = VoiceGrant(
     push_credential_sid=push_credential_sid,
@@ -29,10 +30,10 @@ def token(myId):
   )
   chatGrant = IpMessagingGrant(
     service_sid=ipm_service_sid,
-    endpoint_id="DeepReason:{0}:{1}".format(device_id, myId)
+    endpoint_id="DeepReason:{0}:{1}".format(device_id, identity)
   )
 
-  token = AccessToken(account_sid, api_key, api_key_secret, myId)
+  token = AccessToken(account_sid, api_key, api_key_secret, identity)
   token.add_grant(voiceGrant)
   token.add_grant(chatGrant)
   return str(token)
